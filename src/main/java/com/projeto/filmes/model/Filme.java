@@ -19,9 +19,7 @@ public class Filme extends AbstractEntity {
 	
 	@Column(name = "dt_Ano", length = 4)
 	private Integer ano;
-	
 
-	private Ator ator;
 
 	public String getTitulo() {
 		return titulo;
@@ -39,13 +37,7 @@ public class Filme extends AbstractEntity {
 		this.ano = ano;
 	}
 
-	public Ator getAtor() {
-		return ator;
-	}
 
-	public void setAtor(Ator ator) {
-		this.ator = ator;
-	}
 	
 	
 	
