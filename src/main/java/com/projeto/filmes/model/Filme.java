@@ -20,7 +20,7 @@ public class Filme extends AbstractEntity {
 	@Column(name = "dt_Ano", length = 4)
 	private Integer ano;
 	
-	@ManyToMany
+
 	private Ator ator;
 
 	public String getTitulo() {
