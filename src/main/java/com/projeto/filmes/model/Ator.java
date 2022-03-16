@@ -14,6 +14,8 @@ public class Ator extends AbstractEntity {
 	
 	@Column(name = "dt_nascimento", length = 10)
 	private String nascimento;
+	
+	
 
 	public String getNome() {
 		return nome;
