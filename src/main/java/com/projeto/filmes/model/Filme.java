@@ -14,10 +14,10 @@ import javax.persistence.Table;
 public class Filme extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name = "nm_titulo", length = 50)
+	@Column(length = 50)
 	private String titulo;
 	
-	@Column(name = "dt_Ano", length = 4)
+	@Column(length = 4)
 	private Integer ano;
 
 

@@ -47,7 +47,7 @@ public class FilmeController implements ControllerInterface<Filme>{
 
 	@Override
 	@PostMapping
-	public ResponseEntity<Filme> post(@RequestBody Filme filme) throws URISyntaxException {
+	public ResponseEntity<Filme> post(@RequestBody Filme filme) {
 		service.create(filme);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(filme.getId())
 				.toUri();
