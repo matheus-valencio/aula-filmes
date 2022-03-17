@@ -1,5 +1,7 @@
 package com.projeto.filmes.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,9 +9,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -25,9 +24,9 @@ public class Filme extends AbstractEntity {
 	@Column(length = 4)
 	private Integer ano;
 
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "fk_ator_id", unique = true)
-	private Ator ator;
+	private List<Ator> ator;
 	
 	public String getTitulo() {
 		return titulo;
@@ -45,13 +44,14 @@ public class Filme extends AbstractEntity {
 		this.ano = ano;
 	}
 
-	public Ator getAtor() {
+	public List<Ator> getAtor() {
 		return ator;
 	}
 
-	public void setAtor(Ator ator) {
+	public void setAtor(List<Ator> ator) {
 		this.ator = ator;
 	}
+
 
 	
 

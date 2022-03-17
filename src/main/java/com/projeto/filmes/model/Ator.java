@@ -1,7 +1,10 @@
 package com.projeto.filmes.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +18,9 @@ public class Ator extends AbstractEntity {
 	@Column(name = "dt_nascimento", length = 10)
 	private String nascimento;
 	
-	
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "fk_nacionalidade_id", unique = true)
+	private Nacionalidade nacionalidade;
 
 	public String getNome() {
 		return nome;
@@ -31,6 +36,14 @@ public class Ator extends AbstractEntity {
 
 	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
+	}
+
+	public Nacionalidade getNacionalidade() {
+		return nacionalidade;
+	}
+
+	public void setNacionalidade(Nacionalidade nacionalidade) {
+		this.nacionalidade = nacionalidade;
 	}
 	
 	
